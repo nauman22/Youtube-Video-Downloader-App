@@ -24,5 +24,7 @@ app.get("/download",function(request,response){
 		filter: format => format.itag == itag
 	}).pipe(response);
 });
-
-app.listen(5000);
+const port = process.env.PORT || 3000
+server.listen(port,() => {
+  console.log(`Server running at port `+port);
+});
